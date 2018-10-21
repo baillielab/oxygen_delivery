@@ -9,13 +9,13 @@
 timelimit = 30
 offline_mode = True
 verbose = False
-mbc=False # mass balance check
+mbc = False # mass balance check
 
 toleranceoferror_so2 =	1e-7
 toleranceoferror_lung =	0.00001
-toleranceoferror_organ =0.00001
+toleranceoferror_organ = 0.00001
 toleranceoferror_ph =	0.00001
-VO2correctionspeed=		3 # normally 3; faster has higher chance of oscillation
+VO2correctionspeed =	3 # normally 3; faster has higher chance of oscillation
 globaldifftolerance =	0.01
 num_lung_compartments = 20
 #http://www.sciencedirect.com/science/article/pii/S0378381204002717						
@@ -900,22 +900,22 @@ CtCO2 = 1
 CtO2 = 1
 ecmodelivery = 0
 # ------  ------  ------  ------  ------  ------  ------  ------ 
-
 getinputs()
 calculatedconstants()
 populatealvgaseqn()
-try:
-	updatebloodgascontents()
-	updatepartialpressures()
-except:
-	pass
+if __name__ == "__main__":
+	try:
+		updatebloodgascontents()
+		updatepartialpressures()
+	except:
+		pass
 
-for i in range(maxruns):
-	circulate_once(i)
-	globaldiff = check_completion()
-	if globaldiff < globaldifftolerance:
-		break
-formatoutput()
+	for i in range(maxruns):
+		circulate_once(i)
+		globaldiff = check_completion()
+		if globaldiff < globaldifftolerance:
+			break
+	formatoutput()
 
 # ------  ------  ------  ------  ------  ------  ------  ------ 
 
