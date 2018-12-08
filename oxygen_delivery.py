@@ -4,7 +4,7 @@
 # Name:		 	Oxygen delivery model
 # Authors:  	Andrew Bretherick, Kenneth Baillie
 # Copyright:	Bretherick, Baillie 2018
-# Contact:      j.k.baillie@ed.ac.uk
+# Contact:      j.k.baillie@baillielab.net
 #----------------------------------------------------------------------------
 timelimit = 30
 offline_mode = True
@@ -918,12 +918,6 @@ if __name__ == "__main__":
 	formatoutput()
 
 # ------  ------  ------  ------  ------  ------  ------  ------ 
-
-
-
-
-
-
 
 
 
